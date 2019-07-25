@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "401645132545",
+    "firebase_url": "https://ptwicaraka.firebaseio.com",
+    "project_id": "ptwicaraka",
+    "storage_bucket": "ptwicaraka.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401645132545:android:21fb198b93d90b37",
+        "android_client_info": {
+          "package_name": "com.example.ptwicaraka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "401645132545-ihknbncoirthi730s0igaaq5hdm5nusr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ptwicaraka",
+            "certificate_hash": "02ed746e918c2cf12a37bc7cfd701993d671a63b"
+          }
+        },
+        {
+          "client_id": "401645132545-53bklp6tmko9gdv9n3ivcj9595f3b5c5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhKMjnjs9KOjg7uI9i_XHFlXUoBe62rco"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "401645132545-53bklp6tmko9gdv9n3ivcj9595f3b5c5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

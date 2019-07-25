@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">PT. Wicaraka Persada</string>
+
+    <string-array name="kategori">
+        <item>Rumah Tangga</item>
+        <item>Usaha Mikro</item>
+        <item>Pengecer</item>
+    </string-array>
+
+    <string-array name="bulan">
+        <item>Januari</item>
+        <item>Febuari</item>
+        <item>Maret</item>
+        <item>April</item>
+        <item>Mei</item>
+        <item>Juni</item>
+        <item>Juli</item>
+        <item>Agustus</item>
+        <item>September</item>
+        <item>Oktober</item>
+        <item>November</item>
+        <item>Desember</item>
+    </string-array>
+
+    <string-array name="pangkalan">
+        <item>Toko Gemilang</item>
+        <item>A. Rahmat</item>
+        <item>Aditya Gas</item>
+        <item>Agustina Nurhayati</item>
+        <item>Budi Iskandar</item>
+        <item>DRA Mastiola Endang D.S</item>
+        <item>DRA Istiawati Trilestari</item>
+        <item>Eno B.S</item>
+        <item>Hendawati</item>
+        <item>Lina Iryanti</item>
+        <item>Nurmaulana</item>
+        <item>Nurul Hidayah H.F.</item>
+        <item>Prabo Sutejo</item>
+        <item>Sri Tanti Setiasih</item>
+        <item>Toko Mardian</item>
+        <item>Toko Dessy</item>
+        <item>Toko Faiz Gas</item>
+        <item>Toko Madhani</item>
+        <item>Tonny</item>
+        <item>Yulia Indrawati</item>
+    </string-array>
+
+</resources>
