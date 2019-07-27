@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@android:color/holo_blue_light"
+    android:background="@drawable/gradient"
     tools:context=".harian">
 
     <LinearLayout
@@ -51,10 +51,13 @@
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
             />
+
         <EditText
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="72dp"/>
+            android:id="@+id/nama"
+            android:layout_marginLeft="72dp"
+            android:lines="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,10 +75,13 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="20dp"
             />
+
         <EditText
+            android:id="@+id/alamat"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:lines="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -115,10 +121,13 @@
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
             />
+
         <EditText
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"/>
+            android:id="@+id/keterangan"
+            android:layout_marginLeft="100dp"
+            android:lines="1" />
     </LinearLayout>
 
     <LinearLayout
@@ -138,7 +147,10 @@
         <EditText
             android:layout_width="128dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"/>
+            android:id="@+id/jmlbeli"
+            android:layout_marginLeft="5dp"
+            android:lines="1"
+            android:inputType="number"/>
     </LinearLayout>
 
     <LinearLayout
@@ -156,16 +168,16 @@
             android:layout_marginLeft="185dp"
             android:layout_marginTop="20sp"
             />
+
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/submitharian"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
             android:backgroundTint="@android:color/holo_orange_light"
             android:drawablePadding="50sp"
             android:text="Submit"
-            android:textSize="20sp"
-            android:layout_marginTop="20sp"
-            />
+            android:textSize="20sp" />
 
     </LinearLayout>
 

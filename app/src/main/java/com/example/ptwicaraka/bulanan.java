@@ -37,7 +37,6 @@ public class bulanan extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulanan);
         getUsernameLocal();
-        //cleardata();
 
         spinner2 = findViewById(R.id.spinner2);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.bulan, android.R.layout.simple_spinner_item);
@@ -60,10 +59,10 @@ public class bulanan extends AppCompatActivity implements AdapterView.OnItemSele
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String selected = spinner2.getSelectedItem().toString();
                         dataSnapshot.getRef().child("id_bulanan").setValue(id.toString());
-                        dataSnapshot.getRef().child("date").setValue(selected);
+                        dataSnapshot.getRef().child("bulan").setValue(selected);
                         dataSnapshot.getRef().child("jml_tabung").setValue(edt_jmltbg.getText().toString());
                         dataSnapshot.getRef().child("rumah_tangga").setValue(edt_rt.getText().toString());
-                        dataSnapshot.getRef().child("usaha_micro").setValue(edt_usahamikro.getText().toString());
+                        dataSnapshot.getRef().child("usaha_mikro").setValue(edt_usahamikro.getText().toString());
                         dataSnapshot.getRef().child("pengecer").setValue(edt_pengecer.getText().toString());
 
                         Intent intent = new Intent(bulanan.this, bulanan.class);
