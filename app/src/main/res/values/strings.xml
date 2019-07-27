@@ -23,26 +23,26 @@
     </string-array>
 
     <string-array name="pangkalan">
-        <item>Toko Gemilang</item>
-        <item>A. Rahmat</item>
-        <item>Aditya Gas</item>
-        <item>Agustina Nurhayati</item>
-        <item>Budi Iskandar</item>
-        <item>DRA Mastiola Endang D.S</item>
-        <item>DRA Istiawati Trilestari</item>
-        <item>Eno B.S</item>
+        <item>Gemilang</item>
+        <item>A.Rahmat</item>
+        <item>Aditya</item>
+        <item>Agustina</item>
+        <item>Budi</item>
+        <item>Mastiola</item>
+        <item>Istiawati</item>
+        <item>Eno</item>
         <item>Hendawati</item>
-        <item>Lina Iryanti</item>
+        <item>Lina</item>
         <item>Nurmaulana</item>
-        <item>Nurul Hidayah H.F.</item>
-        <item>Prabo Sutejo</item>
-        <item>Sri Tanti Setiasih</item>
-        <item>Toko Mardian</item>
-        <item>Toko Dessy</item>
-        <item>Toko Faiz Gas</item>
-        <item>Toko Madhani</item>
+        <item>Nurul</item>
+        <item>Prabo</item>
+        <item>Sri</item>
+        <item>Mardian</item>
+        <item>Dessy</item>
+        <item>Faiz</item>
+        <item>Madhani</item>
         <item>Tonny</item>
-        <item>Yulia Indrawati</item>
+        <item>Yulia</item>
     </string-array>
 
 </resources>
