@@ -12,51 +12,52 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="80dp">
+        android:layout_marginTop="80dp"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="70dp"
             android:fontFamily="sans-serif"
             android:text="Tanggal"
             android:textColor="@android:color/black"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginRight="70dp"
-            android:layout_marginLeft="20dp"
-            />
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/tvDate1"
             android:layout_width="170dp"
-            android:layout_height="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginLeft="60dp"
+            android:fontFamily="sans-serif"
             android:hint="Pilih Tanggal"
             android:textAlignment="center"
-            android:id="@+id/tvDate1"
-            android:textSize="20dp"
-            android:fontFamily="sans-serif"
-            android:layout_marginLeft="60dp"
-            />
+            android:textSize="20dp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
             android:fontFamily="sans-serif"
             android:text="Nama Pembeli"
             android:textColor="@android:color/black"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/nama"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
-            android:id="@+id/nama"
             android:layout_marginLeft="72dp"
+            android:inputType="textCapWords"
             android:lines="1" />
     </LinearLayout>
 
@@ -64,23 +65,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="30dp"
             android:fontFamily="sans-serif"
             android:text="Alamat Pembeli"
             android:textColor="@android:color/black"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="20dp"
-            />
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/alamat"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
+            android:inputType="textCapWords"
             android:lines="1" />
     </LinearLayout>
 
@@ -97,12 +99,13 @@
             android:textSize="20dp"
             android:textStyle="bold"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="7dp"
             />
 
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_marginLeft="48dp" />
 
     </LinearLayout>
@@ -127,6 +130,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/keterangan"
             android:layout_marginLeft="100dp"
+            android:inputType="textCapWords"
             android:lines="1" />
     </LinearLayout>
 
@@ -185,7 +189,7 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:src="@drawable/pertamina"
-        android:layout_marginTop="295dp"
+        android:layout_marginTop="297dp"
         android:layout_marginLeft="250dp"
         />
 </LinearLayout>

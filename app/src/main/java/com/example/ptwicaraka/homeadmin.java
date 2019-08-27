@@ -56,7 +56,8 @@ public class homeadmin extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //menghapus data kepada local storage (handphone)
-                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY,MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getSharedPreferences
+                        (USERNAME_KEY,MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString(username_key,null);
                 editor.apply();

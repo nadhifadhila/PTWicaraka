@@ -39,7 +39,7 @@ public class stok extends AppCompatActivity {
     String username_key = "";
     String username_key_new = "";
     Integer id = new Random().nextInt();
-
+    String datepick = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +68,14 @@ public class stok extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                 month = month + 1;
-                Log.d(TAG, "onDateSet : dd/mm/yyyy: " + dayOfMonth + "/" + month + "/" + year);
+                Log.d(TAG, "onDateSet : dd/mm/yyyy: " + dayOfMonth + "-" + month + "-" + year);
 
-                String date = dayOfMonth + "/" + month + "/" + year;
+                String date = dayOfMonth + "-" + month + "-" + year;
                 mDisplayDate.setText(date);
             }
         };
+        datepick = mDisplayDate.toString();
+
 
         edt_jmltabung = findViewById(R.id.jmltabung);
         edt_sisa = findViewById(R.id.sisa);
@@ -85,19 +87,24 @@ public class stok extends AppCompatActivity {
         submitstok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String selected = mDisplayDate.getText().toString();
                 reference = FirebaseDatabase.getInstance().getReference()
-                        .child("stok_tabung").child(username_key_new).child(id.toString());
+                        .child("stok_tabung").child(username_key_new).child(selected);
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        CharSequence selected = mDisplayDate.getText();
                         dataSnapshot.getRef().child("id_stok").setValue(id.toString());
                         dataSnapshot.getRef().child("tanggal").setValue(selected);
-                        dataSnapshot.getRef().child("jumlah_tabung").setValue(edt_jmltabung.getText().toString());
-                        dataSnapshot.getRef().child("sisa_tabung").setValue(edt_sisa.getText().toString());
-                        dataSnapshot.getRef().child("sisa_tabung_isi").setValue(edt_sisaisi.getText().toString());
-                        dataSnapshot.getRef().child("sisa_tabung_kosong").setValue(edt_sisaksg.getText().toString());
-                        dataSnapshot.getRef().child("sisa_tabung_bocor").setValue(edt_sisabcr.getText().toString());
+                        dataSnapshot.getRef().child("jumlah_tabung")
+                                .setValue(edt_jmltabung.getText().toString());
+                        dataSnapshot.getRef().child("sisa_tabung")
+                                .setValue(edt_sisa.getText().toString());
+                        dataSnapshot.getRef().child("sisa_tabung_isi")
+                                .setValue(edt_sisaisi.getText().toString());
+                        dataSnapshot.getRef().child("sisa_tabung_kosong")
+                                .setValue(edt_sisaksg.getText().toString());
+                        dataSnapshot.getRef().child("sisa_tabung_bocor")
+                                .setValue(edt_sisabcr.getText().toString());
 
                         Intent intent = new Intent(stok.this, stok.class);
                         startActivity(intent);
@@ -118,6 +125,7 @@ public class stok extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(stok.this, home.class);
                 startActivity(i);
+                finish();
             }
         });
     }

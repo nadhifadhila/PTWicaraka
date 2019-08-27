@@ -25,7 +25,7 @@
             android:layout_marginLeft="20dp"
             />
         <Spinner
-            android:id="@+id/spinner5"
+            android:id="@+id/pangkalanspin"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="48dp"
@@ -48,17 +48,156 @@
             android:layout_marginLeft="20dp"
             />
         <Spinner
-            android:id="@+id/spinner6"
+            android:id="@+id/bulanspin"
             android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="92dp"
             />
     </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bulan                    : "
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/bulan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="14dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Tabung : "
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/jmltbgbln"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rumah Tangga  : "
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/rumah"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:inputType="number"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Usaha Mikro       : "
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/mikro"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:inputType="number"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pengecer            : "
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/ecer"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:inputType="number"/>
+
+
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="58dp"
         android:layout_marginRight="40dp"
         android:orientation="horizontal">
 
@@ -72,7 +211,18 @@
             android:textSize="13sp" />
 
         <Button
-            android:id="@+id/button12"
+            android:id="@+id/btn_hapus"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:drawablePadding="50sp"
+            android:text="Hapus"
+            android:textSize="13sp"
+
+            />
+
+        <Button
+            android:id="@+id/btn_edit"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_green_light"
@@ -83,26 +233,17 @@
             />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/cari"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@android:color/holo_orange_dark"
             android:drawablePadding="50sp"
-            android:text="Cetak"
+            android:text="Cari"
             android:textSize="13sp"
 
             />
 
-        <Button
-            android:id="@+id/button14"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:drawablePadding="50sp"
-            android:text="Hapus"
-            android:textSize="13sp"
 
-            />
     </LinearLayout>
     <ImageView
         android:layout_width="150dp"

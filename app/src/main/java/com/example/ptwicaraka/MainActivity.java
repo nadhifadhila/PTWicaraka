@@ -11,8 +11,6 @@ import android.view.WindowManager;
 
 
 public class MainActivity extends Activity {
-    //set waktu lama sPlashscreen
-    //private static int LamaTampilSplash = 1000;
 
     String USERNAME_KEY = "usernamekey";
     String username_key = "";
@@ -21,35 +19,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //MULAI KODING
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        // KODING
 
         setContentView(R.layout.activity_main);
-
-
-        //KODING LAGI
-
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                // to do auto generated stub
-//                Intent apasih = new Intent(MainActivity.this, login.class);
-//                startActivity(apasih);
-//                finish();
-//
-//                // jeda setelah splashscren
-//
-//                this.selesai();
-//            }
-//
-//            private void selesai() {
-//                //auto
-//            }
-//        }, LamaTampilSplash);
         getUsernameLocal();
 
     }

@@ -23,6 +23,8 @@
         android:id="@+id/usersignup"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="100dp"
+        android:inputType="text"
+        android:lines="1"
         android:layout_marginRight="32dp"
         android:background="@drawable/edittext_login_form"
         android:hint="Nama Pangkalan" />
@@ -35,6 +37,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginRight="32dp"
         android:inputType="textPassword"
+        android:lines="1"
         android:background="@drawable/edittext_login_form"
         android:hint="Password" />
     <Button
@@ -47,5 +50,16 @@
         android:layout_marginRight="32dp"
         android:textColor="@color/white"
         android:background="@drawable/button_login_form"
-        android:text="Sign Up"/>
+        android:text="Daftar"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/btn_login"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:textColor="@color/white"
+        android:background="@drawable/button_login_form"
+        android:text="Masuk"/>
 </LinearLayout>

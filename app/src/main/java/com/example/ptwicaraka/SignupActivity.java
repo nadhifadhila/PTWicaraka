@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignupActivity extends AppCompatActivity {
     DatabaseReference reference;
-    Button btn_signup;
+    Button btn_signup, btn_login;
     EditText usersignup, passsignup;
 
     @Override
@@ -25,6 +25,7 @@ public class SignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
 
         btn_signup = (Button) findViewById(R.id.btn_signup);
+        btn_login = findViewById(R.id.btn_login);
         usersignup = findViewById(R.id.usersignup);
         passsignup = findViewById(R.id.passsignup);
 
@@ -32,16 +33,20 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(usersignup.getText().toString());
+                reference = FirebaseDatabase.getInstance().getReference().child("Users")
+                        .child(usersignup.getText().toString());
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(usersignup.getText().toString());
+                        reference = FirebaseDatabase.getInstance().getReference().child("Users")
+                                .child(usersignup.getText().toString());
                         reference.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                dataSnapshot.getRef().child("Nama_Pangkalan").setValue(usersignup.getText().toString());
-                                dataSnapshot.getRef().child("Password").setValue(passsignup.getText().toString());
+                                dataSnapshot.getRef().child("Nama_Pangkalan")
+                                        .setValue(usersignup.getText().toString());
+                                dataSnapshot.getRef().child("Password")
+                                        .setValue(passsignup.getText().toString());
                             }
 
                             @Override
@@ -50,7 +55,8 @@ public class SignupActivity extends AppCompatActivity {
                             }
                         });
 
-                        Intent gotohomeuser = new Intent(SignupActivity.this, home.class);
+                        Intent gotohomeuser = new Intent
+                                (SignupActivity.this, home.class);
                         startActivity(gotohomeuser);
                         finish();
                     }
@@ -60,6 +66,16 @@ public class SignupActivity extends AppCompatActivity {
 
                     }
                 });
+            }
+        });
+
+        btn_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(SignupActivity.this, login.class);
+                startActivity(i);
+                finish();
+
             }
         });
     }

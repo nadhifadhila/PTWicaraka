@@ -39,7 +39,8 @@ public class bulanan extends AppCompatActivity implements AdapterView.OnItemSele
         getUsernameLocal();
 
         spinner2 = findViewById(R.id.spinner2);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.bulan, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource
+                (this, R.array.bulan, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter);
         spinner2.setOnItemSelectedListener(this);
@@ -52,18 +53,24 @@ public class bulanan extends AppCompatActivity implements AdapterView.OnItemSele
         submitbln.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final String selected = spinner2.getSelectedItem().toString();
                 reference = FirebaseDatabase.getInstance().getReference()
-                        .child("laporan_bulanan").child(username_key_new).child(id.toString());
+                        .child("laporan_bulanan").child(username_key_new)
+                        .child(selected.toString());
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         String selected = spinner2.getSelectedItem().toString();
                         dataSnapshot.getRef().child("id_bulanan").setValue(id.toString());
                         dataSnapshot.getRef().child("bulan").setValue(selected);
-                        dataSnapshot.getRef().child("jml_tabung").setValue(edt_jmltbg.getText().toString());
-                        dataSnapshot.getRef().child("rumah_tangga").setValue(edt_rt.getText().toString());
-                        dataSnapshot.getRef().child("usaha_mikro").setValue(edt_usahamikro.getText().toString());
-                        dataSnapshot.getRef().child("pengecer").setValue(edt_pengecer.getText().toString());
+                        dataSnapshot.getRef().child("jml_tabung")
+                                .setValue(edt_jmltbg.getText().toString());
+                        dataSnapshot.getRef().child("rumah_tangga")
+                                .setValue(edt_rt.getText().toString());
+                        dataSnapshot.getRef().child("usaha_mikro")
+                                .setValue(edt_usahamikro.getText().toString());
+                        dataSnapshot.getRef().child("pengecer")
+                                .setValue(edt_pengecer.getText().toString());
 
                         Intent intent = new Intent(bulanan.this, bulanan.class);
                         startActivity(intent);

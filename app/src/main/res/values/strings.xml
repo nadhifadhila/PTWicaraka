@@ -23,24 +23,24 @@
     </string-array>
 
     <string-array name="pangkalan">
-        <item>Gemilang</item>
-        <item>A.Rahmat</item>
         <item>Aditya</item>
         <item>Agustina</item>
         <item>Budi</item>
-        <item>Mastiola</item>
-        <item>Istiawati</item>
+        <item>Dessy</item>
         <item>Eno</item>
+        <item>Faiz</item>
+        <item>Gemilang</item>
         <item>Hendawati</item>
+        <item>Istiawati</item>
         <item>Lina</item>
+        <item>Madhani</item>
+        <item>Mardian</item>
+        <item>Mastiola</item>
         <item>Nurmaulana</item>
         <item>Nurul</item>
         <item>Prabo</item>
+        <item>Rahmat</item>
         <item>Sri</item>
-        <item>Mardian</item>
-        <item>Dessy</item>
-        <item>Faiz</item>
-        <item>Madhani</item>
         <item>Tonny</item>
         <item>Yulia</item>
     </string-array>

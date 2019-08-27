@@ -19,10 +19,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
 
-    //Declaration SqliteHelper
-    //DataHelper sqliteHelper;
-    //SQLiteDatabase db;
-
     Button btn_login, btn_signup;
     EditText uname, pass;
 
@@ -42,10 +38,6 @@ public class login extends AppCompatActivity {
         uname = findViewById(R.id.uname);
         pass = findViewById(R.id.pass);
 
-        //Opening SQLite Pipeline
-        //sqliteHelper = new DataHelper(this);
-        //db = sqliteHelper.getReadableDatabase();
-
         btn_login.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -54,54 +46,70 @@ public class login extends AppCompatActivity {
                 //Get values from EditText fields
                 String username = uname.getText().toString();
                 final String password = pass.getText().toString();
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(username);
-                if (username.equals("admin") && password.equals("admin123")) {
 
-                    Toast.makeText(login.this, "Successfully Logged in!", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(login.this, homeadmin.class);
-                    startActivity(i);
-                    finish();
-
+                if (uname.getText().toString().equals("") && pass.getText().toString().equals("")) {
+                    Toast.makeText(login.this, "Mohon Isi Username & Password",
+                            Toast.LENGTH_SHORT).show();
                 } else {
-                    reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.exists()) {
+                    reference = FirebaseDatabase.getInstance().getReference().child("Users")
+                            .child(username);
+                    if (username.equals("admin") && password.equals("admin123")) {
 
-                                //ambil data password dari firebase
-                                String passwordFromDatabase = dataSnapshot.child("Password").getValue().toString();
+                        Toast.makeText(login.this, "Berhasil Masuk Akun!",
+                                Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(login.this, homeadmin.class);
+                        startActivity(i);
+                        finish();
 
-                                //validasi password dengan firebase
-                                if (password.equals(passwordFromDatabase)) {
+                    } else {
+                        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists()) {
 
-                                    //simpan username (key) kepada local
-                                    SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putString(username_key, uname.getText().toString());
-                                    editor.apply();
+                                    //ambil data password dari firebase
+                                    String passwordFromDatabase = dataSnapshot.child("Password")
+                                            .getValue().toString();
 
-                                    //berpindah activity
-                                    Intent gotohome = new Intent(login.this, home.class);
-                                    startActivity(gotohome);
-                                    finish();
+                                    //validasi password dengan firebase
+                                    if (password.equals(passwordFromDatabase)) {
+
+                                        //simpan username (key) kepada local
+                                        SharedPreferences sharedPreferences = getSharedPreferences
+                                                (USERNAME_KEY, MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString(username_key, uname.getText().toString());
+                                        editor.apply();
+
+                                        //berpindah activity
+                                        Intent gotohome = new Intent
+                                                (login.this, home.class);
+                                        startActivity(gotohome);
+                                        finish();
+
+
+                                    } else {
+                                        Toast.makeText(login.this,
+                                                "Password yang Anda Masukkan Salah!",
+                                                Toast.LENGTH_SHORT).show();
+                                    }
 
 
                                 } else {
-                                    Toast.makeText(login.this, "password salah", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(login.this,
+                                            "Username Tidak Ada!", Toast.LENGTH_SHORT).show();
                                 }
-
-
-                            } else {
-                                Toast.makeText(login.this, "Username tidak ada !", Toast.LENGTH_SHORT).show();
                             }
-                        }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                        }
-                    });
+                            }
+                        });
+                    }
+
                 }
+
 
             }
         });
